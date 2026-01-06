@@ -1,0 +1,24 @@
+<!-- Error Message -->
+<div *ngIf="error()" class="error-message">
+  <strong>⚠️ Fehler:</strong> {{ error() }}
+</div>
+
+<!-- Results Section -->
+<div *ngIf="issues() || improvedText()" class="results-section">
+  <!-- Issues -->
+  <div class="result-box issues-box">
+    <h3>🔍 Was wirkt generisch?</h3>
+    <p>{{ issues() }}</p>
+  </div>
+
+  <!-- Improved Text -->
+  <div class="result-box improved-box">
+    <h3>🚀 Humanisierter Text</h3>
+    <p>{{ improvedText() }}</p>
+  </div>
+</div>
+
+<!-- Info -->
+<div *ngIf="!issues() && !improvedText() && !error()" class="info-message">
+  <p>Geben Sie einen Text ein und klicken Sie auf "Humanisieren", um zu beginnen.</p>
+</div>

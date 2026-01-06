@@ -1,0 +1,28 @@
+<div class="input-section">
+  <label for="inputText">Ihr Text:</label>
+  <textarea
+    id="inputText"
+    [(ngModel)]="userText"
+    placeholder="Geben Sie einen Text ein, den Sie humanisieren möchten..."
+    rows="5"
+    [disabled]="isLoading()"
+  ></textarea>
+
+  <!-- Buttons -->
+  <div class="button-group">
+    <button
+      (click)="humanize()"
+      [disabled]="isLoading() || !userText()"
+      class="btn btn-primary"
+    >
+      {{ isLoading() ? '⏳ Wird verarbeitet...' : '✨ Humanisieren' }}
+    </button>
+    <button
+      (click)="reset()"
+      [disabled]="isLoading()"
+      class="btn btn-secondary"
+    >
+      Zurücksetzen
+    </button>
+  </div>
+</div>
